@@ -12,9 +12,9 @@ background_imgTag=new Image();
 background_imgTag.onload=uploadbackground;
 background_imgTag.src=background_image;
 
-rover_imgTag=new Image();
-rover_imgTag.onload=uploadrover;
-rover_imgTag.src=rover_image;
+rover_imgTag= new Image();
+rover_imgTag.onload= uploadrover;
+rover_imgTag.src= rover_image;
 }
 
 function uploadbackground(){
@@ -22,7 +22,7 @@ function uploadbackground(){
 }
 
 function uploadrover(){
-    ctx.drawImage(rover_imgTag, rover_X, rover_Y, rover.width, rover.height);
+    ctx.drawImage(rover_imgTag, rover_X, rover_Y, rover_width, rover_height);
     
 }
 
@@ -52,5 +52,44 @@ function my_keydown(e){
     {
         right();
         console.log("right");
+    }
+}
+function up(){
+    if (rover_Y>0)
+    {
+        rover_Y=rover_Y - 10;
+        console.log("X=" +rover_X+ "Y=" +rover_Y);
+uploadbackground();
+uploadrover();
+    }
+}
+
+function down(){
+    if (rover_Y<=550)
+    {
+        rover_Y=rover_Y + 10;
+        console.log("X=" +rover_X+ "Y=" +rover_Y);
+uploadbackground();
+uploadrover();
+    }
+}
+
+function left(){
+    if (rover_X>=0)
+    {
+        rover_X=rover_X - 10;
+        console.log("X=" +rover_X+ "Y=" +rover_Y);
+uploadbackground();
+uploadrover();
+    }
+}
+
+function right(){
+    if (rover_X<=750)
+    {
+        rover_X=rover_X + 10;
+        console.log("X=" +rover_X+ "Y=" +rover_Y);
+uploadbackground();
+uploadrover();
     }
 }
